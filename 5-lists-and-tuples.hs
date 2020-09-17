@@ -20,6 +20,24 @@ x:xs
 [1..5]
 ['a'..'z']
 
+-- You can also specify the step with ranges. Only one step can be given
+[2, 0..100] -- lists the even numbers from 0 to 100
+
+-- some ambiguity when moving backwards
+[20..1] -- is not a list from 20 -> 1
+[20,19..1] -- this is
+
+-- floating points' imprecision can lead to weird range behavior
+-- learn a good haskell lady says not to use them in ranges
+[0.1, 0.3 .. 1]
+=>[0.1,0.3,0.5,0.7,0.8999999999999999,1.0999999999999999]  
+
+-- Since Haskell is lazy, we can make infinite lists that it won't try to evaluate
+-- This says to take 24 elements of this infinite list of 13's multiples
+take 24 [13,26..]
+
+
+
 -- Generating a List
 -- asc - ascending list from n to m
 asc :: Int -> Int -> [Int]
@@ -58,6 +76,7 @@ null []
 	=> True
 null [1, 2, 3, 4, 5]
 	=> False
+
 
 -- Functions for Lists of Booleans
 

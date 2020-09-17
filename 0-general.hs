@@ -9,5 +9,8 @@
   Haskell's syntax is different.
   f(x) becomes f
   f(x,y) becomes f x y
-  a
+  
+  Haskell uses recursion heavily instead of loops
+
+  Haskell is statically typed and compiled. It is lazily evaluated (meaning that it doesn't compute a value until it specifically has to know said value). In the right circumstances it can be faster than C, in part because these constrictions allow for hardcore optimization
 -}

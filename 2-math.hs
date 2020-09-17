@@ -5,7 +5,7 @@ subNum = 3 - 6
 multNum = 3 * 6
 divNum = 3 / 6
 
--- good ex of how function can be rewritten
+-- good ex of how function can be rewritten. More info in functions file
 modNum = mod 9 2
 modNum = 9 `mod` 2
 

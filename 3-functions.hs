@@ -24,6 +24,16 @@ add a b = a + b
 add 10 20
 10 `add` 20
 
+{- 
+ - Take special note as well that operations defined by special characters
+ - +,-,*,/,==,/=
+ - are all functions as well. They are infix by default
+ - To examine its type, pass it to another function, or call it as a prefix function,
+ - you must surround it with parentheses 
+ -}
+:t (==)
+ => (==) :: (Eq a) => a -> a -> Bool  
+
 
 -- the following functions all do the same thing in different ways
 in_range min max x =
@@ -45,3 +55,4 @@ in_range min max x =
 	where
 		ilb = min <= x
 		iub = max >= x
+

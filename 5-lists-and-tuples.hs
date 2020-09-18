@@ -249,3 +249,8 @@ addTuples xs = [x+y | (x,y) <- xs]
 
 addTuples [ (1,2), (2,3), (100,100) ]
 	=> [3, 5, 200]
+
+-- heres a fun pythagorean problem from LYAGH
+-- to find a list of tuples of side lengths for a right-angle triangle with sides
+-- of length < 10 and whose perimeter == 24
+let rightTriangles' = [ (a,b,c) | c <- [1..10], b <- [1..c], a <- [1..b], a^2 + b^2 == c^2, a+b+c == 24]

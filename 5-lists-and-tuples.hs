@@ -20,7 +20,7 @@ x:xs
 
 -- Ranges
 -------------------------------------------------------------------
--- generate list the easy way
+-- generate a list the easy way
 [1..5]
 ['a'..'z']
 
@@ -34,7 +34,7 @@ x:xs
 -- floating points' imprecision can lead to weird range behavior
 -- learn a good haskell lady says not to use them in ranges
 [0.1, 0.3 .. 1]
- =>[0.1,0.3,0.5,0.7,0.8999999999999999,1.0999999999999999]  
+ =>[0.1,0.3,0.5,0.7,0.8999999999999999,1.0999999999999999]
 
 -- Since Haskell is lazy, we can make infinite lists that it won't try to evaluate
 -- This says to take 24 elements of this infinite list of 13's multiples
@@ -42,7 +42,7 @@ take 24 [13,26..]
 
 -- cycle turns a list into an infinite list
 -- must cut off any access to avoid infinitely listing and infinite list
-take 10 (cycle [1,2,3]) 
+take 10 (cycle [1,2,3])
  =>[1,2,3,1,2,3,1,2,3,1]
 
 -- repeat takes an element and produces an infinite list of just that element
@@ -153,11 +153,11 @@ or [True, False, True]
 [ x*y | x <- [2,5,10], y <- [8,10,11]]
  => [16,20,22,40,50,55,80,100,110]
 
--- A fun learn u a good haskell example is 
-let nouns = ["hobo","frog","pope"]  
-let adjectives = ["lazy","grouchy","scheming"]  
-[adjective ++ " " ++ noun | adjective <- adjectives, noun <- nouns]  
- => ["lazy hobo","lazy frog","lazy pope","grouchy hobo","grouchy frog", "grouchy pope","scheming hobo","scheming frog","scheming pope"]   
+-- A fun learn u a good haskell example is
+let nouns = ["hobo","frog","pope"]
+let adjectives = ["lazy","grouchy","scheming"]
+[adjective ++ " " ++ noun | adjective <- adjectives, noun <- nouns]
+ => ["lazy hobo","lazy frog","lazy pope","grouchy hobo","grouchy frog", "grouchy pope","scheming hobo","scheming frog","scheming pope"]
 
 -- Another example shows an easy way to calculate length of a list
 -- it turns every element in a list into a one and adds them up
@@ -211,16 +211,16 @@ evens (x:xs)
 ("Andrew", "Barlow", 22)
 
 -- zip
--- this function "zips" together two lists into pairs 
-zip [1,2,3,4,5] [5,5,5,5,5] 
+-- this function "zips" together two lists into pairs
+zip [1,2,3,4,5] [5,5,5,5,5]
  => [ (1,5), (2,5), (3,5), (4,5), (5,5) ]
 
-zip [1 .. 5] ["one", "two", "three", "four", "five"] 
+zip [1 .. 5] ["one", "two", "three", "four", "five"]
  => [(1,"one"),(2,"two"),(3,"three"),(4,"four"),(5,"five")]
 
 -- if there's a list length discrepency, the longer list gets cut off
-zip [5,3,2,6,2,7,2,5,4,6,6] ["im","a","turtle"]  
- => [(5,"im"),(3,"a"),(2,"turtle")]  
+zip [5,3,2,6,2,7,2,5,4,6,6] ["im","a","turtle"]
+ => [(5,"im"),(3,"a"),(2,"turtle")]
 
 -- fst
 -- this function finds the first element in a tuple
@@ -232,7 +232,7 @@ fst (x, y)
 snd (x, y)
  => y
 
--- Here's a definition of fst & snd (for learning purposes, they're already defined) 
+-- Here's a definition of fst & snd (for learning purposes, they're already defined)
 -- that uses pattern matching to find first and second vals of a tuple
 fst :: (a, b) -> a
 fst (x, _) = x

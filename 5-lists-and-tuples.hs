@@ -69,26 +69,31 @@ asc n m
 -- useful and neccessary for most work with lists
 import Data.List
 
+-- head
 -- get the head element of a list
 head :: [a] -> a
 head [1, 2, 3, 4, 5]
 	=> 1
 
+-- tail
 -- get the tail of a list
 tail :: [a] -> [a]
 tail [1, 2, 3, 4, 5]
 	=> [2, 3, 4, 5]
 
+-- length
 -- get the length of a list
 length :: [a] -> Int
 length [1, 2, 3, 4, 5]
 	=> 5
 
+-- init
 -- gives A COPY of list w/ last element removed
 init :: [a] -> [a]
 init  [1, 2, 3, 4, 5]
 	=> [1, 2, 3, 4]
 
+-- null
 -- determine if a list is empty
 -- important to check if list is empty b4 calling other functions on it
 null :: [a] -> Bool
@@ -96,7 +101,6 @@ null []
 	=> True
 null [1, 2, 3, 4, 5]
 	=> False
-
 
 -- Functions for Lists of Booleans
 
@@ -108,6 +112,7 @@ or :: [Bool] -> Bool
 or [True, False, True]
 	=> True
 
+
 -- List Comprehensions
 ------------------------------------------------------------------------
 -- take a list and build a new list out of it
@@ -118,7 +123,6 @@ or [True, False, True]
 
 
 -- Some different cases:
-
 
 -- take a list and return a list of those elements multiplied by two
 [ 2*x | x <- [1, 2, 3] ]
@@ -154,6 +158,7 @@ let nouns = ["hobo","frog","pope"]
 let adjectives = ["lazy","grouchy","scheming"]  
 [adjective ++ " " ++ noun | adjective <- adjectives, noun <- nouns]  
  => ["lazy hobo","lazy frog","lazy pope","grouchy hobo","grouchy frog", "grouchy pope","scheming hobo","scheming frog","scheming pope"]   
+
 -- Another example shows an easy way to calculate length of a list
 -- it turns every element in a list into a one and adds them up
 -- wildcard prevents unneccessary assignment of a value we don't care about
@@ -190,8 +195,45 @@ evens (x:xs)
 -- Tuples
 --------------------------------------------------------------------------------------
 -- Have multiple elements in a pair, can have two or more elements
+-- Two-element tuples = pairs
+-- Three-element tuples = triples
+-- 4 = 4-tuples, etc.
 
--- pattern matching to find first and second vals of a tuple
+(1, 2, 3, n)
+
+-- Useful for things like lists of vectors, where a list would not have a problem with
+[ [1, 2], [3, 4, 5], [6, 7] ]
+-- but the second list item would be an error and mess up calculations
+-- A list of tuples can only have the same size, however
+[ (1, 2), (3, 4), (5, 6) ]
+
+-- tuples can also be used with mixed data types
+("Andrew", "Barlow", 22)
+
+-- zip
+-- this function "zips" together two lists into pairs 
+zip [1,2,3,4,5] [5,5,5,5,5] 
+ => [ (1,5), (2,5), (3,5), (4,5), (5,5) ]
+
+zip [1 .. 5] ["one", "two", "three", "four", "five"] 
+ => [(1,"one"),(2,"two"),(3,"three"),(4,"four"),(5,"five")]
+
+-- if there's a list length discrepency, the longer list gets cut off
+zip [5,3,2,6,2,7,2,5,4,6,6] ["im","a","turtle"]  
+ => [(5,"im"),(3,"a"),(2,"turtle")]  
+
+-- fst
+-- this function finds the first element in a tuple
+fst (x, y)
+ => x
+
+-- snd
+-- this one finds the second
+snd (x, y)
+ => y
+
+-- Here's a definition of fst & snd (for learning purposes, they're already defined) 
+-- that uses pattern matching to find first and second vals of a tuple
 fst :: (a, b) -> a
 fst (x, _) = x
 

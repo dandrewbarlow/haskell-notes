@@ -18,6 +18,7 @@ fac n
 -- Pattern Matching
 -- "_" functions as a wildcard here. there are two definitions of the function based on different patterns
 -- this would be a duplicate definition in other languages, but haskell is not other languages.
+-- Important to know it's evaluated from top to bottom, so if the wildcard was on top, it would never detect 0, bc it would match to the wildcard
 is_zero 0 = True
 is_zero _ = False
 

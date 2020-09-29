@@ -32,3 +32,10 @@ myLength list = sum [1 | _ <- list]
 myReverse :: [a] -> [a]
 myReverse [] = []
 myReverse (x:xs) = myReverse xs ++ [x]
+
+-- 6
+-- Find out whether a list is a palindrome (can be read forward or backward)
+isPalindrome :: (Eq a) => [a] -> Bool
+isPalindrome [] = True
+isPalindrome [_] = True
+isPalindrome list = (head list) == (last list) && (isPalindrome $ init $ tail list)

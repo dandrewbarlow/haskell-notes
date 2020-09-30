@@ -1,4 +1,4 @@
-import Graphics.Gloss
+import Graphics.Gloss ( Picture )
 
 ourPicture :: Picture
 ourPicture = solidCircle

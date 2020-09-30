@@ -11,8 +11,5 @@ This is a repo to hold my code / notes while learning haskell. God help me.
 <<<<<<< HEAD
 * [UPenn Haskell Course Page](https://www.seas.upenn.edu/~cis194/fall16/lectures/01-intro.html) - an acedemic perspective is always welcome. Also a fairly articulate writer here
 * [99 Haskell Problems](https://wiki.haskell.org/H-99:_Ninety-Nine_Haskell_Problems)
-=======
-<<<<<<< HEAD
 * [UPenn Haskell Course Page](https://www.seas.upenn.edu/~cis194/fall16/lectures/01-intro.html) - an acedemic perspective is always welcome. Also a fairly articulate writer here
-=======
 * [99 Haskell Problems](https://wiki.haskell.org/H-99:_Ninety-Nine_Haskell_Problems)

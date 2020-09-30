@@ -12,5 +12,7 @@
 
   Haskell uses recursion heavily instead of loops
 
-  Haskell is statically typed and compiled. It is lazily evaluated (meaning that it doesn't compute a value until it specifically has to know said value). In the right circumstances it can be faster than C, in part because these constrictions allow for hardcore optimization, parallelization, and other special sauces that can create a powerhouse of a language.
+  Haskell is statically typed and compiled. It is lazily evaluated (meaning that it doesn't compute a value until it specifically has to know said value). One source describes the = sign in haskell as a definition like in math, rather than an assignment like many programming languages
+  
+  In the right circumstances it can be faster than C, in part because these constrictions allow for hardcore optimization, parallelization, and other special sauces that can create a powerhouse of a language. 
 -}
